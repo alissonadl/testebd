@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviar</title>
+    <title>Create</title>
 </head>
 <body>
     <nav>
@@ -13,8 +13,15 @@
         <a href="/update">Update</a>
         <a href="/delete">Delete</a>
     </nav>
-    <h3>Dados enviados:</h3>
-    Nome: {{nome}}<br>
-    CPF: {{cpf}}
+    <h3>Cadastrar usuário:</h3>
+    <form action="/enviar" method="post">
+        <label for="">CPF: </label>
+        <input type="text" name="cpf">
+        <br>
+        <label for="">Nome: </label>
+        <input type="text" name="nome">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviar</title>
+    <title>Update</title>
 </head>
 <body>
     <nav>
@@ -13,8 +13,15 @@
         <a href="/update">Update</a>
         <a href="/delete">Delete</a>
     </nav>
-    <h3>Dados enviados:</h3>
-    Nome: {{nome}}<br>
-    CPF: {{cpf}}
+    <h3>Digite seus dados:</h3>
+    <form action="/atualizado" method="post">
+        <label for="">Seu CPF: </label>
+        <input type="text" name="cpf">
+        <br>
+        <label for="nome">Novo nome:</label>
+        <input type="text" name="novo_nome">
+        <br>
+        <button type="submit">Atualizar</button>
+    </form>
 </body>
 </html>

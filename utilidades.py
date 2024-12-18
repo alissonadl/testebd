@@ -1,3 +1,3 @@
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy #Biblioteca necessária para mapear classes Python para tabelas do banco de dados relacional
 
-db = SQLAlchemy() #Referenciando o app para o SQLAlchemy. Isso só pode ser feito após vincular o app ao banco
+db = SQLAlchemy() #Instanciando o SQLAlchemy

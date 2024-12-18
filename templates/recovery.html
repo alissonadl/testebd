@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviar</title>
+    <title>Recovery</title>
 </head>
 <body>
     <nav>
@@ -13,8 +13,11 @@
         <a href="/update">Update</a>
         <a href="/delete">Delete</a>
     </nav>
-    <h3>Dados enviados:</h3>
-    Nome: {{nome}}<br>
-    CPF: {{cpf}}
+    <h3>Buscar dados:</h3>
+    <form action="/mostrar" method="post">
+        <label for="">Informe seu CPF: </label>
+        <input type="text" name="cpf">
+        <button type="submit" >Buscar</button>
+    </form>
 </body>
 </html>
