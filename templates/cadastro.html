@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/login">Login</a>
+        <a href="/cadastro">Cadastro</a>
+    </nav>
+    <h3>Tela de Cadastro</h3>
+    <form action="/cadastrar" method="post">
+        <label for="">Nome: </label>
+        <input type="text"name="nome">
+        <label for="">CPF: </label>
+        <input type="text" name="cpf">
+        <label for="">Senha: </label>
+        <input type="password" name="senha">
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

@@ -3,3 +3,4 @@ DB_USERNAME = info03                             #Define o nome de usuário para
 DB_PASSWORD = Desweb-info03                      #Define a senha para acessar o banco de dados.
 DB_HOST = desweb.mysql.database.azure.com        #Define o endereço do host do banco de dados.
 DB_DATABASE = projetos-desweb                    #Define o nome do banco de dados a ser usado.
+SECRET_KEY = senhasupersecretawow                #Define a "senha" que será usada para autenticar.
