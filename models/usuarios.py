@@ -1,5 +1,6 @@
 from flask_login import UserMixin
-from flask_sqlalchemy import SQLAlchemy #Biblioteca necessária para mapear classes Python para tabelas do banco de dados relacional
+#from flask_sqlalchemy import SQLAlchemy #Biblioteca necessária para mapear classes Python para tabelas do banco de dados relacional
+#Não é necessário obrigatoriamente pois importando * de utilidades já importa isso também.
 from utilidades import *
 
 class Usuario(db.Model, UserMixin): #Criando classe Python herdando as informações do SQLAlchemy e UserMixin
