@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request #até aqui, já tinhamos visto tudo
+from flask import Flask, render_template, redirect, request #até aqui, já tinhamos visto tudo, menos o redirect
 import os #Biblioteca para ler arquivos como se fosse um "Sistema Operacional"
 from dotenv import load_dotenv #Biblioteca para trabalhar com arquivos env
 from flask_sqlalchemy import SQLAlchemy #Biblioteca necessária para mapear classes Python para tabelas do banco de dados relacional
@@ -50,24 +50,24 @@ def autenticacao():
         return render_template("login.html", msg = msg)
 
     if usuario.cpf == cpf and usuario.senha == senha: # Se der certo
-        login_user(usuario)
+        login_user(usuario) #Efetua o login do usuário "iniciando uma sessão"
         return render_template("autenticacao.html", usuario = usuario)
     
     else: #Se o usuário for encontrado, mas o login falhar (erro de senha)
         msg = "Erro nas credenciais"
         return render_template("login.html", msg = msg)
 
-@app.route('/logout', methods = ["get", "post"])
-@login_required
+@app.route('/logout', methods = ["get", "post"]) #Rota para deslogar usuário
+@login_required #Sinalizando que o usuário só pode acessar essa página se fez o login
 def logout():
-    logout_user()
-    return redirect("login")
+    logout_user() #Função do pacote de login manager
+    return redirect("login") #redireciona para /login
 
 @app.route('/cadastro', methods = ["get", "post"])
 def cadastro():
     return render_template("cadastro.html")
 
-@app.route("/cadastrar", methods = ["get", "post"])
+@app.route("/cadastrar", methods = ["get", "post"]) #Tudo aqui vimos no CREATE do banco de dados
 def cadastrar():
     cpf = request.form.get("cpf")
     nome = request.form.get("nome")
@@ -78,11 +78,11 @@ def cadastrar():
     return render_template("cadastrar.html", usuario=novo_usuario)
 
 @app.route("/logado", methods = ["get", "post"])
-@login_required
+@login_required #Sinalizando que o usuário só pode acessar essa página se fez o login
 def logado():
     return render_template("logado.html")
 
-#Rotas de erro
+#Personalização de rotas de erro
 #Pagina do error 401 (Não autorizado, login não feito)
 @app.errorhandler(401)
 def erro401(error):
@@ -92,6 +92,7 @@ def erro401(error):
 @app.errorhandler(404)
 def erro401(error):
     return render_template('erro404.html'), 404
+
 
 #Rotas para C.R.U.D:
 

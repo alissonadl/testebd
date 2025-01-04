@@ -8,10 +8,5 @@ class Usuario(db.Model, UserMixin): #Criando classe Python herdando as informaç
     nome = db.Column(db.String(30), nullable=False)  #Não permitindo valor nulo
     senha = db.Column(db.String(30), nullable=False) #Não permitindo valor nulo
 
-    def __init__ (self, cpf,nome,senha):
-        self.cpf = cpf
-        self.nome = nome
-        self.senha = senha
-
-    def get_id(self):
+    def get_id(self): #Função para pegar o identificador do usuário (necessário para login)
         return self.cpf
