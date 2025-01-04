@@ -29,7 +29,9 @@ Para comunicar com um banco de dados precisamos de alguns passos:
 
 • Para utilizar o login_manager precisamos instalar a dependência flask-login
 
-• Em Utilidades, vamos instancias o login manager
+• Em Utilidades, vamos instanciar o login manager
+
+• No nosso app.py precisaremos também configurar a 'SECRET_KEY'
 
 • Em Models precisamos criar um modelo de classe para o nosso usuário 
     • Essa classe precisará ter a função >get_id< que é o nome padrão da função que será usado no login manager
